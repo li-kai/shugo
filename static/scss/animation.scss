@@ -11,10 +11,10 @@
 * @include transition(standard);
 */
 
-$standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
-$deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
-$acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
-$sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+$standard-curve: cubic-bezier(0.4, 0, 0.2, 1);
+$deceleration-curve: cubic-bezier(0, 0, 0.2, 1);
+$acceleration-curve: cubic-bezier(0.4, 0, 1, 1);
+$sharp-curve: cubic-bezier(0.4, 0, 0.6, 1);
 
 @mixin transition($name: null, $property: all) {
   @if $name != null {
@@ -42,7 +42,8 @@ $sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
     // objects may scale up either in size (to 100%) or opacity (to 100%).
     // In some cases, when objects enter the screen at 0% opacity,
     // they may slightly shrink from a larger size upon entry.
-    */ @else if $name == deceleration {
+    */
+    @else if $name == deceleration {
       transition: $property 225ms $deceleration-curve;
 
       @include media-breakpoint-up(md) {
@@ -61,7 +62,8 @@ $sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
     // They accelerate at the beginning of the animation and may scale down in
     // either size (to 0%) or opacity (to 0%). In some cases, when objects leave
     // the screen at 0% opacity, they may also slightly scale up or down in size.
-    */ @else if $name == acceleration {
+    */
+    @else if $name == acceleration {
       transition: $property 195ms $acceleration-curve;
 
       @include media-breakpoint-up(md) {
@@ -81,7 +83,8 @@ $sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
     // decelerate in a symmetrical curve to a resting point immediately off-screen.
     // The deceleration is faster than the standard curve since it doesn't follow an
     // exact path to the off-screen point. Objects may return from that point at any time.
-    */ @else if $name == sharp {
+    */
+    @else if $name == sharp {
       transition: $property 300ms $sharp-curve;
 
       @include media-breakpoint-up(md) {
