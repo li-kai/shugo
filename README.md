@@ -1,6 +1,27 @@
 # Shugo
 
-Hugo static site generator with bells and whistles.
+## A minumum effort Hugo boilerplate
+
+Shugo is a hugo boilerplate with bells and whistles attached and grunt work done, so you don't have to.
+
+### Opinionated
+
+Prettier installed means you don't have to care about code quality.<br/>
+Every line is to specification.
+
+### SCSS with Autoprefixer
+
+Don't need to worry about browser support. Code and it's ready to go live.
+
+### Fast
+
+Hugo + Node = Fast
+
+## One Click Deploy
+
+Can't be bothered to set it up?
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/li-kai/shugo)
 
 ## Requirement
 
