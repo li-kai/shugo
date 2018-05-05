@@ -18,6 +18,7 @@ const SCSS_GLOB = './static/scss/**/*.scss';
 const SCSS_ENTRY = './static/scss/main.scss';
 const SCSS_PATH = './static/scss';
 const CSS_PATH = './static/css';
+const HUGO_PATH = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
 
 const sortPlugin = sorting({
   order: [
@@ -148,8 +149,8 @@ const sortPlugin = sorting({
   ],
 });
 
-const errorPlugin = () =>
-  plumber(function(error) {
+function errorPlugin() {
+  return plumber(function(error) {
     if (IS_DEVELOPMENT) {
       notify.onError({
         title: 'Error on scss',
@@ -161,6 +162,7 @@ const errorPlugin = () =>
       throw error;
     }
   });
+}
 
 // Lints and fixes scss
 gulp.task('scss:fix', () => {
@@ -218,7 +220,7 @@ gulp.task('hugo', ['scss:compile'], () => {
     flags.push('server'); // watch and serve
     flags.push('--navigateToChanged'); // navigate to changed file
   }
-  const child = spawn('hugo', flags);
+  const child = spawn(HUGO_PATH, flags);
 
   child.stdout.setEncoding('utf8');
   child.stdout.on('data', data => {
