@@ -9,16 +9,10 @@ Shugo is a hugo boilerplate with bells and whistles attached.
 
 ### Opinionated
 
-Prettier installed means you don't have to care about code quality.<br/>
-Every line is to specification.
-
-### SCSS with Autoprefixer
-
-Don't need to worry about browser support. Code and it's ready to go live.
-
-### Fast
-
-Hugo + Node = Fast
+- Prettier
+- SCSS with Autoprefixer
+- Netlify CMS
+- Fast
 
 ### One Click Deploy
 

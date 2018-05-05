@@ -1,6 +1,6 @@
 # Shugo
 
-## A minumum effort Hugo boilerplate
+## A minimum effort Hugo boilerplate
 
 Shugo is a hugo boilerplate with bells and whistles attached and grunt work done, so you don't have to.
 
